@@ -20896,12 +20896,12 @@ com.wiris.e1_11.prototype= {
         vpb.style.top=com.wiris.system.JsDOMUtils.v8c(this.element, this.vlb)+v5c.vV1-this.element.scrollTop+v5c.height+"px";
     }
     ,
-    vsb:function(vpb) {
+    vsb:function(vpb) {console.log('vsb');console.log(vpb);
         if(vpb==null)return;
         vpb.style.display="none";
     }
     ,
-    v9c:function(vpb) {
+    v9c:function(vpb) {console.log('v9c');console.log(this.editorModel.isFormulaEmpty());
         if(vpb==null||!com.wiris.system.JsDOMUtils.viZ.vAc())return;
         if(!this.editorModel.isFormulaEmpty()) {
             vpb.style.display="block";
@@ -21463,7 +21463,7 @@ com.wiris.e1_11.prototype= {
     }
     ,
     focus:function() {
-        if(this.v8b!=null) {
+        if(this.v8b!=null) {console.log('focus');console.log(this.v8b);
             this.v8b.focus();
             com.wiris.system.JsDOMUtils.vsc(this.v8b, this.v8b.value.length, this.v8b.value.length);
         }
@@ -23632,7 +23632,7 @@ com.wiris.system.JsDOMUtils.vad=function(element, className) {
 }
 
 ;
-com.wiris.system.JsDOMUtils.vsc=function(element, position, end) {
+com.wiris.system.JsDOMUtils.vsc=function(element, position, end) {console.log('vsc');console.log(element);
     if(element.setSelectionRange)element.setSelectionRange(position, end);
     else if(element.createTextRange) {
         var vqf=element.createTextRange();
