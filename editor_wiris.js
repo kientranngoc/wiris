@@ -1749,7 +1749,7 @@ com.wiris.editor.EditorModel.prototype= {
             var vp2=HxOverrides.iter(this.toolbar.vq2(i.next()));
             if(vp2.hasNext()) {
                 var c=vp2.next();
-                if(js.Boot.__instanceof(c, com.wiris.e1_m)) {
+                if(js.Boot.__instanceof(c, com.wiris.e1_m)) {console.log(20);
                     var b=js.Boot.vX2(c, com.wiris.e1_m);
                     if(b.vr2&&b.vs2!=vo2)b.click();
                 }
@@ -20685,7 +20685,7 @@ com.wiris.js.JsEditor.prototype= {
         else if(e.keyCode==40) {
             if(com.wiris.system.JsDOMUtils.vfa(this.toolbar.vAb, target))com.wiris.system.JsDOMUtils.v9b(e);
             else if(this.isToolbarComponent(target)) {
-                if(target.nodeName.toLowerCase()=="button"&&target.parentNode.nodeName.toLowerCase()!="td") {
+                if(target.nodeName.toLowerCase()=="button"&&target.parentNode.nodeName.toLowerCase()!="td") {console.log(21);
                     com.wiris.system.JsDOMUtils.v9b(e);
                     target.click();
                     target.vLb();
@@ -20877,8 +20877,7 @@ com.wiris.e1_11.prototype= {
         com.wiris.system.JsDOMUtils.v3c(js.Lib.document, "touchend", v2c, true);
         com.wiris.system.JsDOMUtils.v3c(js.Lib.document, "touchcancel", v2c, true);
         com.wiris.system.JsDOMUtils.v3c(js.Lib.document, "touchleave", v2c, true);
-        com.wiris.system.JsDOMUtils.v3c(js.Lib.document, "click", function(e) {console.log(e);
-            console.log(vtb);
+        com.wiris.system.JsDOMUtils.v3c(js.Lib.document, "click", function(e) {
                 if(vtb) {
                     if(vOb(e, e.v4c))e.v4c();
                     else e.cancelBubble=true;
@@ -21102,7 +21101,7 @@ com.wiris.e1_11.prototype= {
         }
     }
     ,
-    vac:function(e) {
+    vac:function(e) {console.log(e);console.log(this);
         this.focus();
         this.v9c(this.vib);
         this.vsb(this.vjb);
@@ -21834,7 +21833,7 @@ com.wiris.e1_21.prototype= {
                     , 1);
             }
         );
-        var vSd=function(e) {
+        var vSd=function(e) {console.log(24);
                 var self=vi1;
                 setTimeout(function() {
                         if(StringTools.startsWith(StringTools.trim(textarea.value), "<"))try {
@@ -21852,7 +21851,7 @@ com.wiris.e1_21.prototype= {
             ;
         com.wiris.system.JsDOMUtils.addEventListener(textarea, "paste", vSd);
         com.wiris.system.JsDOMUtils.addEventListener(vQd, "click", vSd);
-        com.wiris.system.JsDOMUtils.addEventListener(vRd, "click", function(e) {
+        com.wiris.system.JsDOMUtils.addEventListener(vRd, "click", function(e) {console.log(23);
                 via.close();
                 vi1.editor.focus();
             }
@@ -21966,7 +21965,7 @@ com.wiris.e1_21.prototype= {
         }
     }
     ,
-    vcd:function(e) {
+    vcd:function(e) {console.log(26);
         var vdd=com.wiris.system.JsDOMUtils.v7b(e);
         while(vdd.nodeName.toLowerCase()!="button"&&vdd.nodeName.toLowerCase()!="div")vdd=vdd.parentNode;
         var ved=0;
@@ -22337,7 +22336,7 @@ com.wiris.e1_21.prototype= {
             vNe.appendChild(vGe);
             vFe.appendChild(vNe);
             vFe.appendChild(vEe);
-            com.wiris.system.JsDOMUtils.addEventListener(element, "click", function(e) {
+            com.wiris.system.JsDOMUtils.addEventListener(element, "click", function(e) {console.log(25);
                     com.wiris.system.JsDOMUtils.v9b(e);
                     if(!matrixButton.enabled)return;
                     vHe();
@@ -23404,7 +23403,7 @@ com.wiris.system.JsDOMUtils.v3c=function(element, vRf, vSf, vTf) {
         }
     );
     else element.addEventListener(vRf, vSf, vTf);
-    console.log(vXf);
+    //console.log(element);
     return vXf;
 }
 
@@ -28563,7 +28562,7 @@ function vff(o) {
 
 ;
 var v7k;
-function vOb(o, m) {
+function vOb(o, m) {//console.log(22);
     var f=function() {
             return f.method.apply(f.scope, arguments);
         }
