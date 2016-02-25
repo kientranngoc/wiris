@@ -21074,7 +21074,7 @@ com.wiris.e1_11.prototype= {
     ,
     vUc:function(e) {
         if(com.wiris.system.JsDOMUtils.viZ.vAc())return;
-        this.vsb(this.vib);console.log('vsb_ 3');
+        this.vsb(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         this.vVc();
@@ -21101,13 +21101,27 @@ com.wiris.e1_11.prototype= {
         }
     }
     ,
-    vac:function(e) {console.log(e);
+    vac:function(e) {
         this.focus();
         //com.wiris.system.JsDOMUtils.v4b(this, "wrs_focused");
         this.v9c(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
-        //com.wiris.system.JsDOMUtils.v9b(e);
+        com.wiris.system.JsDOMUtils.v9b(e);//console.log('vac function');
+        var el = document.getElementsByClassName('wrs_formulaDisplay')[0];
+        var cls = 'wrs_focused';
+        if((' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1) {
+            // try to focus to other point
+
+            //com.wiris.system.JsDOMUtils.v4b(this.element, "wrs_focused");
+            //console.log('focused'); //vyc, vwc
+        } else {
+            //com.wiris.system.JsDOMUtils.vyc(e);
+            this.vwc(e);
+            //com.wiris.system.JsDOMUtils.vLa(el, "wrs_focused");
+            //el.className = 'wrs_formulaDisplay wrs_focused';
+        }
+        //console.log(document.getElementsByClassName('wrs_formulaDisplay'));
     }
     ,
     vbc:function(text) {
