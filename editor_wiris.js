@@ -21120,13 +21120,22 @@ com.wiris.e1_11.prototype= {
             //
             //com.wiris.system.JsDOMUtils.vLa(el, "wrs_focused");
             //el.className = 'wrs_formulaDisplay wrs_focused';
-            var evt = document.createEvent("HTMLEvents");
-            evt.initEvent("click", true, false);
-            document.getElementById('controls').dispatchEvent(evt);
+            //document.getElementById('controls').focus();
             //el.dispatchEvent(evt);
             //document.getElementById('controls').
+                //document.body.focus();
+            this.vwc(e);
+            setTimeout(function(){
+                var evt = document.createEvent("HTMLEvents");
+                evt.initEvent("click", true, false);
+                document.getElementsByClassName('wrs_button')[0].dispatchEvent(evt);
+                //document.getElementById('controls').focus();
+                /*setTimeout(function(){
+                    var evt = document.createEvent("HTMLEvents");
+                    evt.initEvent("click", true, false);
+                    el.dispatchEvent(evt); },100);*/
 
-            setTimeout(function(){el.className = 'wrs_formulaDisplay wrs_focused';},100);
+            },1000);
         }
         //console.log(document.getElementsByClassName('wrs_formulaDisplay'));
     }
