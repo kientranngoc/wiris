@@ -21117,9 +21117,14 @@ com.wiris.e1_11.prototype= {
             //console.log('focused'); //vyc, vwc
         } else {
             //com.wiris.system.JsDOMUtils.vyc(e);
-            this.vwc(e);
+            //this.vwc(e);
             //com.wiris.system.JsDOMUtils.vLa(el, "wrs_focused");
             //el.className = 'wrs_formulaDisplay wrs_focused';
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("click", true, false);
+            document.getElementById('controls').dispatchEvent(evt);
+            el.dispatchEvent(evt);
+            //document.getElementById('controls').
         }
         //console.log(document.getElementsByClassName('wrs_formulaDisplay'));
     }
