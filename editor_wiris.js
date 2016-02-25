@@ -21125,10 +21125,12 @@ com.wiris.e1_11.prototype= {
             //document.getElementById('controls').
                 //document.body.focus();
             this.vwc(e);
+            var me = this;
             setTimeout(function(){
                 var evt = document.createEvent("HTMLEvents");
                 evt.initEvent("click", true, false);
                 document.getElementsByClassName('wrs_button')[0].dispatchEvent(evt);
+                me.vwc(e);
                 //document.getElementById('controls').focus();
                 /*setTimeout(function(){
                     var evt = document.createEvent("HTMLEvents");
