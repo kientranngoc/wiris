@@ -1749,7 +1749,7 @@ com.wiris.editor.EditorModel.prototype= {
             var vp2=HxOverrides.iter(this.toolbar.vq2(i.next()));
             if(vp2.hasNext()) {
                 var c=vp2.next();
-                if(js.Boot.__instanceof(c, com.wiris.e1_m)) {console.log(20);
+                if(js.Boot.__instanceof(c, com.wiris.e1_m)) {
                     var b=js.Boot.vX2(c, com.wiris.e1_m);
                     if(b.vr2&&b.vs2!=vo2)b.click();
                 }
@@ -20685,7 +20685,7 @@ com.wiris.js.JsEditor.prototype= {
         else if(e.keyCode==40) {
             if(com.wiris.system.JsDOMUtils.vfa(this.toolbar.vAb, target))com.wiris.system.JsDOMUtils.v9b(e);
             else if(this.isToolbarComponent(target)) {
-                if(target.nodeName.toLowerCase()=="button"&&target.parentNode.nodeName.toLowerCase()!="td") {console.log(21);
+                if(target.nodeName.toLowerCase()=="button"&&target.parentNode.nodeName.toLowerCase()!="td") {
                     com.wiris.system.JsDOMUtils.v9b(e);
                     target.click();
                     target.vLb();
@@ -20826,7 +20826,7 @@ com.wiris.e1_11.prototype= {
         vpb.className="wrs_caretPrecisionController";
         vpb.vqb=vnb;
         if(vnb!=com.wiris.e1_11.vrb)vpb.className+=" wrs_forSelection";
-        this.vsb(vpb);console.log('vsb_ 1');
+        this.vsb(vpb);
         vpb.appendChild(vob);
         vpb.appendChild(vsU);
         var vtb=false;
@@ -20896,12 +20896,12 @@ com.wiris.e1_11.prototype= {
         vpb.style.top=com.wiris.system.JsDOMUtils.v8c(this.element, this.vlb)+v5c.vV1-this.element.scrollTop+v5c.height+"px";
     }
     ,
-    vsb:function(vpb) {console.log('vsb');console.log(vpb);
+    vsb:function(vpb) {
         if(vpb==null)return;
         vpb.style.display="none";
     }
     ,
-    v9c:function(vpb) {console.log('v9c');console.log(this.editorModel.isFormulaEmpty());
+    v9c:function(vpb) {
         if(vpb==null||!com.wiris.system.JsDOMUtils.viZ.vAc())return;
         if(!this.editorModel.isFormulaEmpty()) {
             vpb.style.display="block";
@@ -21056,7 +21056,7 @@ com.wiris.e1_11.prototype= {
     vQc:function(e) {
         var target=com.wiris.system.JsDOMUtils.v7b(e);
         if(com.wiris.system.JsDOMUtils.vfa(this.vib, target)||com.wiris.system.JsDOMUtils.vfa(this.vjb, target)||com.wiris.system.JsDOMUtils.vfa(this.vkb, target))return;
-        this.vsb(this.vjb);console.log('vsb_ 2');
+        this.vsb(this.vjb);
         this.vsb(this.vkb);
         var vub=com.wiris.system.JsDOMUtils.vvb(this.element, e, this.vwb(), 1);
         if(this.rtl)vub[0]=this.vxb(vub[0]);
@@ -21072,7 +21072,7 @@ com.wiris.e1_11.prototype= {
         return position+this.v0N.offsetWidth-this.element.clientWidth;
     }
     ,
-    vUc:function(e) {
+    vUc:function(e) {console.log('mousedown 5');
         if(com.wiris.system.JsDOMUtils.viZ.vAc())return;
         this.vsb(this.vib);
         this.vsb(this.vjb);
@@ -21087,7 +21087,7 @@ com.wiris.e1_11.prototype= {
                 if(this.rtl)vWc[0]=this.vxb(vWc[0]);
                 this.vRc(vWc[0], vWc[1]);
                 this.vYb=true;
-                com.wiris.system.JsDOMUtils.v9b(e);
+                //com.wiris.system.JsDOMUtils.v9b(e);
             }
         }
     }
@@ -21103,43 +21103,10 @@ com.wiris.e1_11.prototype= {
     ,
     vac:function(e) {
         this.focus();
-        //com.wiris.system.JsDOMUtils.v4b(this, "wrs_focused");
         this.v9c(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
-        com.wiris.system.JsDOMUtils.v9b(e);//console.log('vac function');
-        var el = document.getElementsByClassName('wrs_formulaDisplay')[0];
-        var cls = 'wrs_focused';
-        if((' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1) {
-            // try to focus to other point
-
-            //com.wiris.system.JsDOMUtils.v4b(this.element, "wrs_focused");
-            //console.log('focused'); //vyc, vwc
-        } else {
-            //com.wiris.system.JsDOMUtils.vyc(e);
-            //
-            //com.wiris.system.JsDOMUtils.vLa(el, "wrs_focused");
-            //el.className = 'wrs_formulaDisplay wrs_focused';
-            //document.getElementById('controls').focus();
-            //el.dispatchEvent(evt);
-            //document.getElementById('controls').
-                //document.body.focus();
-            this.vwc(e);
-            var me = this;
-            setTimeout(function(){
-                var evt = document.createEvent("HTMLEvents");
-                evt.initEvent("click", true, false);
-                document.getElementsByClassName('wrs_button')[0].dispatchEvent(evt);
-                me.vwc(e);
-                //document.getElementById('controls').focus();
-                /*setTimeout(function(){
-                    var evt = document.createEvent("HTMLEvents");
-                    evt.initEvent("click", true, false);
-                    el.dispatchEvent(evt); },100);*/
-
-            },1000);
-        }
-        //console.log(document.getElementsByClassName('wrs_formulaDisplay'));
+        com.wiris.system.JsDOMUtils.v9b(e);
     }
     ,
     vbc:function(text) {
@@ -21199,7 +21166,7 @@ com.wiris.e1_11.prototype= {
     }
     ,
     vic:function(e) {
-        this.vsb(this.vib);console.log('vsb_ 4');
+        this.vsb(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         if(this.vdb) {
@@ -21257,7 +21224,7 @@ com.wiris.e1_11.prototype= {
     }
     ,
     vmc:function(e) {
-        this.vsb(this.vib);console.log('vsb_ 5');
+        this.vsb(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         if(com.wiris.system.JsDOMUtils.viZ.vjc()&&e.keyCode==8)return;
@@ -21329,7 +21296,7 @@ com.wiris.e1_11.prototype= {
         this.vUb=false;
         this.vVc();
         com.wiris.system.JsDOMUtils.v4b(this.element, "wrs_focused");
-        this.vsb(this.vib);console.log('vsb_ 6');
+        this.vsb(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
     }
@@ -21496,7 +21463,7 @@ com.wiris.e1_11.prototype= {
     }
     ,
     focus:function() {
-        if(this.v8b!=null) {console.log('focus');console.log(this.v8b);
+        if(this.v8b!=null) {
             this.v8b.focus();
             com.wiris.system.JsDOMUtils.vsc(this.v8b, this.v8b.value.length, this.v8b.value.length);
         }
@@ -21567,7 +21534,7 @@ com.wiris.e1_11.prototype= {
     ,
     contentChanged:function(ve2) {
         this.vxc(true);
-        this.vsb(this.vib);console.log('vsb_ 7');
+        this.vsb(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         if(this.checkSyntax) {
@@ -21644,7 +21611,7 @@ com.wiris.e1_11.prototype= {
                 this.vZb.push(vJd);
             }
             ;
-            this.vsb(this.vib);console.log('vsb_ 8');
+            this.vsb(this.vib);
             if(this.vUb) {
                 this.v9c(this.vjb);
                 this.v9c(this.vkb);
@@ -21866,7 +21833,7 @@ com.wiris.e1_21.prototype= {
                     , 1);
             }
         );
-        var vSd=function(e) {console.log(24);
+        var vSd=function(e) {
                 var self=vi1;
                 setTimeout(function() {
                         if(StringTools.startsWith(StringTools.trim(textarea.value), "<"))try {
@@ -21884,7 +21851,7 @@ com.wiris.e1_21.prototype= {
             ;
         com.wiris.system.JsDOMUtils.addEventListener(textarea, "paste", vSd);
         com.wiris.system.JsDOMUtils.addEventListener(vQd, "click", vSd);
-        com.wiris.system.JsDOMUtils.addEventListener(vRd, "click", function(e) {console.log(23);
+        com.wiris.system.JsDOMUtils.addEventListener(vRd, "click", function(e) {
                 via.close();
                 vi1.editor.focus();
             }
@@ -21998,7 +21965,7 @@ com.wiris.e1_21.prototype= {
         }
     }
     ,
-    vcd:function(e) {console.log(26);
+    vcd:function(e) {
         var vdd=com.wiris.system.JsDOMUtils.v7b(e);
         while(vdd.nodeName.toLowerCase()!="button"&&vdd.nodeName.toLowerCase()!="div")vdd=vdd.parentNode;
         var ved=0;
@@ -22117,7 +22084,7 @@ com.wiris.e1_21.prototype= {
                 vwd[0].className="wrs_panelContainer";
                 vwd[0].appendChild(vvd[0]);
                 var vxd=[false];
-                com.wiris.system.JsDOMUtils.addEventListener(vtd[0], "mousedown", (function(vxd) {
+                com.wiris.system.JsDOMUtils.addEventListener(vtd[0], "mousedown", (function(vxd) {console.log('mousedown 4');
                         return function(e) {
                             vxd[0]=false;
                         }
@@ -22345,7 +22312,7 @@ com.wiris.e1_21.prototype= {
                                 ;
                         }
                     )(vLe, vKe));
-                    com.wiris.system.JsDOMUtils.addEventListener(vMe, "mousedown", (function(vLe, vKe) {
+                    com.wiris.system.JsDOMUtils.addEventListener(vMe, "mousedown", (function(vLe, vKe) {console.log('mousedown 3');
                             return function(e) {
                                 v6e.value=vKe[0]+1;
                                 vAe.value=vLe[0]+1;
@@ -22369,7 +22336,7 @@ com.wiris.e1_21.prototype= {
             vNe.appendChild(vGe);
             vFe.appendChild(vNe);
             vFe.appendChild(vEe);
-            com.wiris.system.JsDOMUtils.addEventListener(element, "click", function(e) {console.log(25);
+            com.wiris.system.JsDOMUtils.addEventListener(element, "click", function(e) {
                     com.wiris.system.JsDOMUtils.v9b(e);
                     if(!matrixButton.enabled)return;
                     vHe();
@@ -22592,7 +22559,7 @@ com.wiris.e1_21.prototype= {
                 var vZe=js.Lib.document.createElement("div");
                 vZe.className="wrs_colorButton";
                 vZe.style.background=color[0];
-                com.wiris.system.JsDOMUtils.addEventListener(vZe, "mousedown", (function(color) {
+                com.wiris.system.JsDOMUtils.addEventListener(vZe, "mousedown", (function(color) {console.log('mousedown 2');
                         return function(e) {
                             vUe.value=color[0];
                             vVe();
@@ -23232,7 +23199,7 @@ com.wiris.e1_71.prototype= {
         if(e.keyCode==27)this.vCb();
     }
     ,
-    vGf:function(e) {
+    vGf:function(e) {console.log('mousedown 1');
         var target=com.wiris.system.JsDOMUtils.v7b(e);
         if(!com.wiris.system.JsDOMUtils.vfa(this.v0N, target))this.vCb();
     }
@@ -23436,7 +23403,6 @@ com.wiris.system.JsDOMUtils.v3c=function(element, vRf, vSf, vTf) {
         }
     );
     else element.addEventListener(vRf, vSf, vTf);
-    //console.log(element);
     return vXf;
 }
 
@@ -23665,8 +23631,8 @@ com.wiris.system.JsDOMUtils.vad=function(element, className) {
 }
 
 ;
-com.wiris.system.JsDOMUtils.vsc=function(element, position, end) {console.log('vsc');console.log(element);
-    if(element.setSelectionRange){console.log('setSelectionRange'); console.log(position); console.log(end); element.setSelectionRange(position, end);}
+com.wiris.system.JsDOMUtils.vsc=function(element, position, end) {
+    if(element.setSelectionRange)element.setSelectionRange(position, end);
     else if(element.createTextRange) {
         var vqf=element.createTextRange();
         vqf.collapse(true);
@@ -28595,7 +28561,7 @@ function vff(o) {
 
 ;
 var v7k;
-function vOb(o, m) {console.log(22);
+function vOb(o, m) {
     var f=function() {
             return f.method.apply(f.scope, arguments);
         }
