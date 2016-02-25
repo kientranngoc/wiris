@@ -20826,7 +20826,7 @@ com.wiris.e1_11.prototype= {
         vpb.className="wrs_caretPrecisionController";
         vpb.vqb=vnb;
         if(vnb!=com.wiris.e1_11.vrb)vpb.className+=" wrs_forSelection";
-        this.vsb(vpb);
+        this.vsb(vpb);console.log('vsb_ 1');
         vpb.appendChild(vob);
         vpb.appendChild(vsU);
         var vtb=false;
@@ -21056,7 +21056,7 @@ com.wiris.e1_11.prototype= {
     vQc:function(e) {
         var target=com.wiris.system.JsDOMUtils.v7b(e);
         if(com.wiris.system.JsDOMUtils.vfa(this.vib, target)||com.wiris.system.JsDOMUtils.vfa(this.vjb, target)||com.wiris.system.JsDOMUtils.vfa(this.vkb, target))return;
-        this.vsb(this.vjb);
+        this.vsb(this.vjb);console.log('vsb_ 2');
         this.vsb(this.vkb);
         var vub=com.wiris.system.JsDOMUtils.vvb(this.element, e, this.vwb(), 1);
         if(this.rtl)vub[0]=this.vxb(vub[0]);
@@ -21074,7 +21074,7 @@ com.wiris.e1_11.prototype= {
     ,
     vUc:function(e) {
         if(com.wiris.system.JsDOMUtils.viZ.vAc())return;
-        this.vsb(this.vib);
+        this.vsb(this.vib);console.log('vsb_ 3');
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         this.vVc();
@@ -21101,12 +21101,13 @@ com.wiris.e1_11.prototype= {
         }
     }
     ,
-    vac:function(e) {console.log(e);console.log(this);
+    vac:function(e) {console.log(e);
         this.focus();
+        //com.wiris.system.JsDOMUtils.v4b(this, "wrs_focused");
         this.v9c(this.vib);
         this.vsb(this.vjb);
         this.vsb(this.vkb);
-        com.wiris.system.JsDOMUtils.v9b(e);
+        //com.wiris.system.JsDOMUtils.v9b(e);
     }
     ,
     vbc:function(text) {
@@ -21166,7 +21167,7 @@ com.wiris.e1_11.prototype= {
     }
     ,
     vic:function(e) {
-        this.vsb(this.vib);
+        this.vsb(this.vib);console.log('vsb_ 4');
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         if(this.vdb) {
@@ -21224,7 +21225,7 @@ com.wiris.e1_11.prototype= {
     }
     ,
     vmc:function(e) {
-        this.vsb(this.vib);
+        this.vsb(this.vib);console.log('vsb_ 5');
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         if(com.wiris.system.JsDOMUtils.viZ.vjc()&&e.keyCode==8)return;
@@ -21296,7 +21297,7 @@ com.wiris.e1_11.prototype= {
         this.vUb=false;
         this.vVc();
         com.wiris.system.JsDOMUtils.v4b(this.element, "wrs_focused");
-        this.vsb(this.vib);
+        this.vsb(this.vib);console.log('vsb_ 6');
         this.vsb(this.vjb);
         this.vsb(this.vkb);
     }
@@ -21534,7 +21535,7 @@ com.wiris.e1_11.prototype= {
     ,
     contentChanged:function(ve2) {
         this.vxc(true);
-        this.vsb(this.vib);
+        this.vsb(this.vib);console.log('vsb_ 7');
         this.vsb(this.vjb);
         this.vsb(this.vkb);
         if(this.checkSyntax) {
@@ -21611,7 +21612,7 @@ com.wiris.e1_11.prototype= {
                 this.vZb.push(vJd);
             }
             ;
-            this.vsb(this.vib);
+            this.vsb(this.vib);console.log('vsb_ 8');
             if(this.vUb) {
                 this.v9c(this.vjb);
                 this.v9c(this.vkb);
@@ -23633,7 +23634,7 @@ com.wiris.system.JsDOMUtils.vad=function(element, className) {
 
 ;
 com.wiris.system.JsDOMUtils.vsc=function(element, position, end) {console.log('vsc');console.log(element);
-    if(element.setSelectionRange)element.setSelectionRange(position, end);
+    if(element.setSelectionRange){console.log('setSelectionRange'); console.log(position); console.log(end); element.setSelectionRange(position, end);}
     else if(element.createTextRange) {
         var vqf=element.createTextRange();
         vqf.collapse(true);
@@ -28562,7 +28563,7 @@ function vff(o) {
 
 ;
 var v7k;
-function vOb(o, m) {//console.log(22);
+function vOb(o, m) {console.log(22);
     var f=function() {
             return f.method.apply(f.scope, arguments);
         }
